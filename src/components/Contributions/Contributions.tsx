@@ -1,3 +1,5 @@
+import { Reveal } from '@/components/Reveal/Reveal';
+
 type ContributionsProps = {
   image: string;
   title: string;
@@ -140,55 +142,59 @@ const Contributions = () => {
             const { image, title, link, techStack } = project;
 
             return (
-              <li key={title} className='flex mb-6 gap-7 last-of-type:mb-0'>
-                {/* project image */}
-                <div className='basis-[30%] max-w-[150px] max-h-[90px] flex-shrink-0 overflow-hidden'>
-                  <img
-                    loading='lazy'
-                    src={image}
-                    alt={title}
-                    className='w-full h-full object-cover'
-                  />
-                </div>
-                {/* project desc */}
-                <div className='flex-1'>
-                  <h3 className='flex mb-2'>
-                    <a
-                      href={link}
-                      target='_blank'
-                      className='text-xl text-white'
-                    >
-                      {title}
-                    </a>
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      fill='none'
-                      viewBox='0 0 24 24'
-                      strokeWidth={1.5}
-                      stroke='currentColor'
-                      className='size-6'
-                    >
-                      <path
-                        strokeLinecap='round'
-                        strokeLinejoin='round'
-                        d='m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25'
+              <li key={title} className='mb-6 last-of-type:mb-0'>
+                <Reveal>
+                  <div className='flex gap-7'>
+                    {/* project image */}
+                    <div className='basis-[30%] max-w-[150px] max-h-[90px] flex-shrink-0 overflow-hidden'>
+                      <img
+                        loading='lazy'
+                        src={image}
+                        alt={title}
+                        className='w-full h-full object-cover'
                       />
-                    </svg>
-                  </h3>
-                  {/* tech stack */}
-                  <ul className='flex flex-wrap gap-2'>
-                    {techStack.map((tech) => {
-                      return (
-                        <li
-                          key={`${tech} + ${Math.random()}`}
-                          className='rounded-full bg-sky-700 px-3 py-1 text-sky-200'
+                    </div>
+                    {/* project desc */}
+                    <div className='flex-1'>
+                      <h3 className='flex mb-2'>
+                        <a
+                          href={link}
+                          target='_blank'
+                          className='text-xl text-white'
                         >
-                          <p>{tech}</p>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
+                          {title}
+                        </a>
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          fill='none'
+                          viewBox='0 0 24 24'
+                          strokeWidth={1.5}
+                          stroke='currentColor'
+                          className='size-6'
+                        >
+                          <path
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                            d='m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25'
+                          />
+                        </svg>
+                      </h3>
+                      {/* tech stack */}
+                      <ul className='flex flex-wrap gap-2'>
+                        {techStack.map((tech) => {
+                          return (
+                            <li
+                              key={`${tech} + ${Math.random()}`}
+                              className='rounded-full bg-sky-700 px-3 py-1 text-sky-200'
+                            >
+                              <p>{tech}</p>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  </div>
+                </Reveal>
               </li>
             );
           })}
