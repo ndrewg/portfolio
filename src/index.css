@@ -85,3 +85,7 @@
     font-feature-settings: 'rlig' 1, 'calt' 1;
   }
 }
+
+.text-stroke {
+  -webkit-text-stroke: 1px rgb(103, 232, 249);
+}
