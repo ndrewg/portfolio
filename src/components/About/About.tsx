@@ -1,8 +1,8 @@
-import { Reveal } from '../Reveal/Reveal';
+import { Reveal } from '@/components/Reveal/Reveal';
 
 const About = () => {
   return (
-    <section id='about'>
+    <>
       <Reveal>
         <p className='mb-4'>
           Started my path as a frontend web developer back when we were
@@ -24,7 +24,7 @@ const About = () => {
           hood.
         </p>
       </Reveal>
-    </section>
+    </>
   );
 };
 

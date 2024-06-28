@@ -65,18 +65,27 @@ const Loader = ({ isLoaded, showIntro, setShowIntro }: ILoaderProps) => {
             </motion.p>
           </h1>
           <motion.p
-            className='text-lg md:text-3xl text-slate-300 font-bold h-0 overflow-hidden text-center'
-            animate={
-              animateSubtitle && {
-                height: 'fit-content',
-                maxHeight: '200px',
-                transitionTimingFunction: 'linear',
-                transitionDuration: '600ms',
-              }
-            }
-            onAnimationComplete={handleSubtitleTransitionEnd}
+            className='text-lg md:text-3xl text-slate-300 font-bold overflow-hidden text-center'
+            animate={animateSubtitle && 'animate'}
           >
-            Frontend Developer
+            {`Frontend Developer`.split('').map((letter, index) => (
+              <motion.span
+                variants={{
+                  initial: { y: '-100%' },
+                  animate: { y: 0 },
+                }}
+                initial='initial'
+                key={index}
+                className={`inline-block ${letter === ' ' ? 'mx-1' : ''}`}
+                animate={animateSubtitle && 'animate'}
+                transition={{
+                  delay: 0.03 * index,
+                }}
+                onAnimationComplete={handleSubtitleTransitionEnd}
+              >
+                {letter}
+              </motion.span>
+            ))}
           </motion.p>
         </div>
       </div>

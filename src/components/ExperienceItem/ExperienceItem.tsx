@@ -1,4 +1,4 @@
-import { Reveal } from '../Reveal/Reveal';
+import { Reveal } from '@/components/Reveal/Reveal';
 
 interface IExperienceItem {
   jobTitle: string;
@@ -16,7 +16,7 @@ const ExperienceItem = ({
   techStack,
 }: IExperienceItem) => {
   return (
-    <li className='group pl-5 pr-2 py-5 mb-2 relative rounded-lg last-of-type:mb-0 border-[1px] border-transparent hover:border-solid hover:border-[rgba(255,255,255,0.1)] after:content-none after:absolute after:top-0 after:left-0 after:w-full after:h-full after:group-hover:bg-[rgba(255,255,255,0.1)] after:z-10'>
+    <li className='group pl-5 pr-2 py-5 mb-2 relative rounded-lg last-of-type:mb-0 border-[1px] border-transparent hover:border-solid hover:border-[rgba(255,255,255,0.1)]'>
       <div className='absolute top-0 left-0 w-full h-full opacity-5 group-hover:bg-slate-50 duration-75 rounded-lg'></div>
       <Reveal>
         <h3 className='text-white text-lg font-bold flex items-center'>
