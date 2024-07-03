@@ -47,7 +47,7 @@ const App = () => {
           />
         )}
       </AnimatePresence>
-      <div className='w-full relative p-10 text-slate-400 block lg:flex lg:items-start lg:px-24 overflow-hidden md:overflow-visible'>
+      <div className='w-full relative p-10 text-slate-400 block lg:flex lg:items-start lg:px-24 overflow-hidden md:overflow-visible lg:max-w-[1200px] lg:mx-auto'>
         <Header />
         <div className='basis-2/4 pt-28'>
           {Object.entries(sections).map(([key, Section]) => {
